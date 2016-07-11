@@ -22,4 +22,13 @@ router.get('/', function(req, res, next) {
   .catch(err => { next(err); });
 });
 
+
+
+res.render('index', {
+    title: 'Notes',
+    notelist: notelist,
+    breadcrumbs: [
+        { href: '/', text: 'Home' }
+    ]
+});
 module.exports = router;

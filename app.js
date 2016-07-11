@@ -27,6 +27,13 @@ app.use('/', routes);
 //app.use('/users', users);
 app.use('/notes',notes);
 // catch 404 and forward to error handler
+
+app.use('/vendor/bootstrap', express.static(
+  path.join(__dirname, 'bower_components', 'bootstrap', 'dist')));
+app.use('/vendor/jquery', express.static(
+  path.join(__dirname, 'bower_components', 'jquery', 'dist')));
+
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
